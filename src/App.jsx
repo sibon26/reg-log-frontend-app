@@ -13,20 +13,25 @@ function App() {
         <Toaster
           position="top-right"
           toastOptions={{
-            duration: 4000,
+            duration: 3500,
             style: {
-              background: '#1e1e2e',
-              color: '#cdd6f4',
-              border: '1px solid #45475a',
+              background: 'rgba(15, 12, 35, 0.85)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              color: '#f0f0ff',
+              border: '1px solid rgba(255,255,255,0.10)',
               borderRadius: '12px',
-              fontSize: '14px',
+              fontSize: '13.5px',
               fontFamily: "'Inter', sans-serif",
+              fontWeight: 450,
+              padding: '12px 16px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(124,107,255,0.08)',
             },
             success: {
-              iconTheme: { primary: '#a6e3a1', secondary: '#1e1e2e' },
+              iconTheme: { primary: '#6ee7b7', secondary: 'rgba(15,12,35,0.85)' },
             },
             error: {
-              iconTheme: { primary: '#f38ba8', secondary: '#1e1e2e' },
+              iconTheme: { primary: '#fb7185', secondary: 'rgba(15,12,35,0.85)' },
             },
           }}
         />
@@ -42,7 +47,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* Catch-all */}
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </AuthProvider>
